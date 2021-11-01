@@ -1,0 +1,217 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Righteous", cursive;
+}
+.body::-webkit-scrollbar {
+  display: none;
+}
+.conteudo-header {
+  height: 92px;
+  width: 100%;
+  background-color: #cf2b2b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+}
+
+.conteudo-header p {
+  height: 17px;
+  width: 226px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #ffffff;
+  margin-bottom: 18px;
+  margin-top: 6px;
+}
+.conteudo-header h1 {
+  height: 44px;
+  width: 248px;
+  border-radius: nullpx;
+  font-family: Righteous;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 55px;
+  text-align: left;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.conteudo-header h1,
+p {
+  padding-left: 21px;
+}
+
+.conteudo-app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5e5e5;
+  position: relative;
+  margin-top: 90px;
+}
+.titulo-comida h1 {
+  height: 25px;
+  width: auto;
+  font-family: Righteous;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.018em;
+  text-align: left;
+  padding-left: 19px;
+  border-radius: nullpx;
+  color: #333333;
+  margin-top: 27px;
+  margin-bottom: 17px;
+}
+.conteudo-prato-principal {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  overflow-x: scroll;
+  background-color: #e5e5e5;
+}
+.pratos {
+  height: 216px;
+  width: 172px;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0, 25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+  position: relative;
+}
+
+.pratos img {
+  height: 87px;
+  width: 144px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.pratos h3 {
+  height: 23px;
+  width: 139px;
+  border-radius: nullpx;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333333;
+  margin-bottom: 5px;
+}
+.descricao-prato {
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  height: 39px;
+  width: 147px;
+  border-radius: nullpx;
+  color: #a6a6a6;
+  padding-right: 11px;
+  margin-bottom: 5px;
+}
+
+.preco-prato {
+  height: 19px;
+  width: 66px;
+  border-radius: nullpx;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000000;
+  padding-right: 92px;
+  margin-bottom: 13px;
+}
+.conteudo-prato-bebida {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  overflow-x: scroll;
+  background-color: #e5e5e5;
+}
+.conteudo-prato-sobremesa {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  overflow-x: scroll;
+  background-color: #e5e5e5;
+  margin-bottom: 70px;
+}
+.finalizar-pedido {
+  height: 92px;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 580px;
+  left: 0px;
+  z-index: 98;
+}
+button {
+  height: 61px;
+  width: 364px;
+  border-radius: 50px;
+  background-color: #cbcbcb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finalizar-pedido p {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  height: 53px;
+  width: 360px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.finalizar-pedido-correto {
+  background-color: #32b72f;
+}
+
+.clicado {
+  box-shadow: 0px 0px 0px 5px rgba(50, 183, 47, 1) inset;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0, 25);
+}
+
+ion-icon {
+  position: absolute;
+  right: 12.78px;
+  bottom: 15.78px;
+  color: #32b72f;
+  display: none;
+}
+
+.clicado ion-icon {
+  display: block;
+}
+
+.padding {
+  padding-top: 30px;
+}

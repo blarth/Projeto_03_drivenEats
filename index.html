@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto DE</title>
+    <link rel="stylesheet" href="cssreset.css" />
+    <link rel="stylesheet" href="cssstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="conteudo-header">
+        <h1>DrivenEats</h1>
+        <p>Sua comida em 6 minutos</p>
+      </div>
+    </header>
+    <main class="conteudo-app" onclick="botao_finalizar()">
+      <div class="titulo-comida">
+        <h1>Primeiro, seu prato</h1>
+      </div>
+      <section class="conteudo-prato-principal">
+        <div class="pratos" onclick="evento_click(this)">
+          <img src="assets/frango_yin_yang 1.png" alt="" />
+          <h3 class="titulo-prato">Frango Yin Yang</h3>
+          <p class="descricao-prato">Um pouco de batata, um pouco de salada</p>
+          <p class="preco-prato">R$ 20,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click(this)">
+          <img src="assets/tacos.png" alt="" />
+          <h3 class="titulo-prato">Tacos</h3>
+          <p class="descricao-prato">Explosão de sabores, 2 unidades</p>
+          <p class="preco-prato">R$ 25,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click(this)">
+          <img src="assets/hamburguer.png" alt="" />
+          <h3 class="titulo-prato">Hamburgasso</h3>
+          <p class="descricao-prato">Do usa para a tua table</p>
+          <p class="preco-prato">R$ 26,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+      </section>
+      <div class="titulo-comida">
+        <h1>Agora, sua bebida</h1>
+      <section class="conteudo-prato-bebida">
+        <div class="pratos" onclick="evento_click_bebida(this)">
+          <img src="assets/coquinha_gelada 1.png" alt="" />
+          <h3 class="titulo-prato">Coca geladíssima</h3>
+          <p class="descricao-prato">Refresco que mata como nenhum</p>
+          <p class="preco-prato">R$ 5,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click_bebida(this)">
+          <img src="assets/guarana.png" alt="" />
+          <h3 class="titulo-prato">Guaraná Antartica</h3>
+          <p class="descricao-prato">Uma delicinha</p>
+          <p class="preco-prato">R$ 4,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click_bebida(this)">
+          <img src="assets/agua.png" alt="" />
+          <h3 class="titulo-prato">Agua com gás</h3>
+          <p class="descricao-prato">Verdadeiro creme de la creme das bebidas</p>
+          <p class="preco-prato">R$ 2,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+      </section>
+      <div class="titulo-comida">
+        <h1>Por fim, sua sobremesa</h1>
+      </div>
+      <section class="conteudo-prato-sobremesa">
+        <div class="pratos" onclick="evento_click_sobremesa(this)">
+          <img src="assets/pudim 1.png" alt="" />
+          <h3 class="titulo-prato">Pudimzao</h3>
+          <p class="descricao-prato">Cremoso e vai te deixar feliz</p>
+          <p class="preco-prato">R$ 8,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click_sobremesa(this)">
+          <img src="assets/bolo.png" alt="" />
+          <h3 class="titulo-prato">Bolão De chocs</h3>
+          <p class="descricao-prato">Porque pedir um se tu pode pedir dois!</p>
+          <p class="preco-prato">R$ 7,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+        <div class="pratos" onclick="evento_click_sobremesa(this)">
+          <img src="assets/sorvete.png" alt="" />
+          <h3 class="titulo-prato">Sorvetin</h3>
+          <p class="descricao-prato">No calor, seu melhor companheiro!</p>
+          <p class="preco-prato">R$ 4,90</p>
+          <ion-icon name="checkmark-circle"></ion-icon>
+        </div>
+      </section>
+      
+    </main>
+    <section class="finalizar-pedido">
+          <a href="#"></a><button onclick="mandar_mensagem()" disabled><p>Selecione os 3 itens para fechar o pedido</p></button>
+    </section>
+    <script src="myjs.js"></script>
+    
+  </body>
+</html>
