@@ -1,4 +1,7 @@
-function evento_click(botao) {
+const pratoPrincipal = document.querySelector(".conteudo-prato-principal .pratos")
+const pratoPrincipalTodos = document.querySelectorAll(".conteudo-prato-principal .pratos")
+let verificadorPrato = document.querySelectorAll(".conteudo-prato-principal .clicado")
+/* function evento_click(botao) {
   const esta_clicado = document.querySelector(
     ".conteudo-prato-principal .clicado"
   );
@@ -8,9 +11,52 @@ function evento_click(botao) {
   } else {
     botao.classList.toggle("clicado");
   }
+} */
+for(let i = 0; i < pratoPrincipalTodos.length; i++){
+  pratoPrincipalTodos[i].addEventListener("click" , (event) => {
+    verificadorPrato = document.querySelectorAll(".conteudo-prato-principal .clicado")
+    
+    
+    switch(verificadorPrato.length){
+      case 0:
+        if(event.path.length !== 7){
+          event.target.parentNode.classList.toggle("clicado")
+          break
+        }
+        event.target.classList.toggle("clicado")
+        break
+      case 1:
+        verificadorPrato[0].classList.remove("clicado")
+        if(event.path.length !== 7){
+          event.target.parentNode.classList.toggle("clicado")
+          break
+        }
+        event.target.classList.toggle("clicado")
+        break
+      default:
+        console.log("Erro nos cases.")
+    }
+  })
 }
 
-function evento_click_bebida(botao) {
+/* 
+pratoPrincipal.addEventListener("click" , (event) => {
+  console.log(pratoPrincipal)
+  console.log(verificadorPrato.length)
+  switch(verificadorPrato.length){
+    case 0:
+      event.target.classList.toggle("clicado")
+      break
+    case 1:
+      verificadorPrato[0].classList.remove("clicado")
+      event.target.classList.toggle("clicado")
+    default:
+      console.log("algo n ta dando certo")
+  }
+}) */
+
+
+/* function evento_click_bebida(botao) {
   const esta_clicado_bebida = document.querySelector(
     ".conteudo-prato-bebida .clicado"
   );
@@ -20,7 +66,7 @@ function evento_click_bebida(botao) {
   } else {
     botao.classList.toggle("clicado");
   }
-}
+} */
 
 function evento_click_sobremesa(botao) {
   const esta_clicado_sobremesa = document.querySelector(
@@ -34,8 +80,32 @@ function evento_click_sobremesa(botao) {
   }
 }
 
-function botao_finalizar() {
-  const prato_escolhido = document.querySelector(
+const corpoApp = document.querySelector(".conteudo-app")
+corpoApp.addEventListener("click", () => {
+  
+  const pratoEscolhido = document.querySelector(
+      ".conteudo-prato-principal .clicado"
+    );
+  const bebida_escolhida = document.querySelector(
+      ".conteudo-prato-bebida .clicado"
+    );
+  const sobremesa_escolhida = document.querySelector(
+      ".conteudo-prato-sobremesa .clicado"
+    );
+  const botaoPronto = document.querySelector("button");
+  const mudaTextoBotao = document.querySelector(".finalizar-pedido p");
+  
+  if (pratoEscolhido !== null && bebida_escolhida !== null && sobremesa_escolhida !== null) {
+    botaoPronto.classList.add("finalizar-pedido-correto");
+    mudaTextoBotao.innerHTML = "Fechar pedido";
+    mudaTextoBotao.classList.add("padding");
+    botaoPronto.disabled = false;  
+  }
+}
+)
+
+/* function botaoFinalizar() {
+  const pratoEscolhido = document.querySelector(
     ".conteudo-prato-principal .clicado"
   );
   const bebida_escolhida = document.querySelector(
@@ -44,26 +114,22 @@ function botao_finalizar() {
   const sobremesa_escolhida = document.querySelector(
     ".conteudo-prato-sobremesa .clicado"
   );
-  const botao_ready = document.querySelector("button");
-  const muda_texto_botao = document.querySelector(".finalizar-pedido p");
+  const botaoPronto = document.querySelector("button");
+  const mudaTextoBotao = document.querySelector(".finalizar-pedido p");
 
-  if (prato_escolhido !== null) {
-    if (bebida_escolhida !== null) {
-      if (sobremesa_escolhida !== null) {
-        botao_ready.classList.add("finalizar-pedido-correto");
-        muda_texto_botao.innerHTML = "Fechar pedido";
-        muda_texto_botao.classList.add("padding");
-        botao_ready.disabled = false;
-      }
-    }
-  }
-}
+  if (pratoEscolhido !== null && bebida_escolhida !== null && sobremesa_escolhida !== null) {
+        botaoPronto.classList.add("finalizar-pedido-correto");
+        mudaTextoBotao.innerHTML = "Fechar pedido";
+        mudaTextoBotao.classList.add("padding");
+        botaoPronto.disabled = false;  
+  
+} */
 
 function mandar_mensagem() {
-  let prato_escolhido = document.querySelector(
+  let pratoEscolhido = document.querySelector(
     ".conteudo-prato-principal .clicado .titulo-prato"
   );
-  prato_escolhido = prato_escolhido.innerHTML;
+  pratoEscolhido = pratoEscolhido.innerHTML;
 
   let bebida_escolhida = document.querySelector(
     ".conteudo-prato-bebida .clicado .titulo-prato"
@@ -76,32 +142,32 @@ function mandar_mensagem() {
 
   sobremesa_escolhida = sobremesa_escolhida.innerHTML;
 
-  let valor1 = document.querySelector(
+  let valorPrato = document.querySelector(
     ".conteudo-prato-principal .clicado .preco-prato"
   ).innerHTML;
-  valor1 = valor1.replace("R$ ", "");
-  valor1 = valor1.replace(",", ".");
-  valor1 = parseFloat(valor1);
+  valorPrato = valorPrato.replace("R$ ", "");
+  valorPrato = valorPrato.replace(",", ".");
+  valorPrato = parseFloat(valorPrato);
 
-  let valor2 = document.querySelector(
+  let valorBebida = document.querySelector(
     ".conteudo-prato-bebida .clicado .preco-prato"
   ).innerHTML;
-  valor2 = valor2.replace("R$ ", "");
-  valor2 = valor2.replace(",", ".");
-  valor2 = parseFloat(valor2);
+  valorBebida = valorBebida.replace("R$ ", "");
+  valorBebida = valorBebida.replace(",", ".");
+  valorBebida = parseFloat(valorBebida);
 
-  let valor3 = document.querySelector(
+  let valorSobremesa = document.querySelector(
     ".conteudo-prato-sobremesa .clicado .preco-prato"
   ).innerHTML;
-  valor3 = valor3.replace("R$ ", "");
-  valor3 = valor3.replace(",", ".");
-  valor3 = parseFloat(valor3);
+  valorSobremesa = valorSobremesa.replace("R$ ", "");
+  valorSobremesa = valorSobremesa.replace(",", ".");
+  valorSobremesa = parseFloat(valorSobremesa);
 
-  let total = valor1 + valor2 + valor3;
+  let valorTotal = valorPrato + valorBebida + valorSobremesa;
 
   let total_msg = total.toFixed(2);
 
-  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato_escolhido} \n- Bebida: ${bebida_escolhida} \n- Sobremesa: ${sobremesa_escolhida} \n-Total: R$ ${total_msg} `;
+  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoEscolhido} \n- Bebida: ${bebida_escolhida} \n- Sobremesa: ${sobremesa_escolhida} \n-Total: R$ ${total_msg} `;
   const msg_wpp = encodeURI(mensagem);
 
   window.location.href = `https://wa.me/5516994476161?text=${msg_wpp}`;
