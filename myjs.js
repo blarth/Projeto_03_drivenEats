@@ -183,16 +183,16 @@ botaoEnviar.addEventListener("click", (event) => {
   );
   pratoEscolhido = pratoEscolhido.innerHTML;
 
-  let bebida_escolhida = document.querySelector(
+  let bebidaEscolhida = document.querySelector(
     ".conteudo-prato-bebida .clicado .titulo-prato"
   );
-  bebida_escolhida = bebida_escolhida.innerHTML;
+  bebidaEscolhida = bebidaEscolhida.innerHTML;
 
-  let sobremesa_escolhida = document.querySelector(
+  let sobremesaEscolhida = document.querySelector(
     ".conteudo-prato-sobremesa .clicado .titulo-prato"
   );
 
-  sobremesa_escolhida = sobremesa_escolhida.innerHTML;
+  sobremesaEscolhida = sobremesaEscolhida.innerHTML;
 
   let valorPrato = document.querySelector(
     ".conteudo-prato-principal .clicado .preco-prato"
@@ -221,13 +221,13 @@ botaoEnviar.addEventListener("click", (event) => {
     return total 
   }
 
-  total_msg = valorTotal(valorPrato, valorBebida, valorSobremesa)
+  totalMsg = valorTotal(valorPrato, valorBebida, valorSobremesa)
   
 
-  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoEscolhido} \n- Bebida: ${bebida_escolhida} \n- Sobremesa: ${sobremesa_escolhida} \n-Total: R$ ${total_msg} `;
-  const msg_wpp = encodeURI(mensagem);
+  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoEscolhido} \n- Bebida: ${bebidaEscolhida} \n- Sobremesa: ${sobremesaEscolhida} \n-Total: R$ ${totalMsg} `;
+  const msgWpp = encodeURI(mensagem);
 
-  window.location.href = `https://wa.me/5516994476161?text=${msg_wpp}`;
+  window.location.href = `https://wa.me/5516994476161?text=${msgWpp}`;
 
 })
 
@@ -271,9 +271,9 @@ botaoEnviar.addEventListener("click", (event) => {
 
   let valorTotal = valorPrato + valorBebida + valorSobremesa;
 
-  let total_msg = total.toFixed(2);
+  let totalMsg = total.toFixed(2);
 
-  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoEscolhido} \n- Bebida: ${bebida_escolhida} \n- Sobremesa: ${sobremesa_escolhida} \n-Total: R$ ${total_msg} `;
+  const mensagem = `Olá, gostaria de fazer o pedido:\n- Prato: ${pratoEscolhido} \n- Bebida: ${bebida_escolhida} \n- Sobremesa: ${sobremesa_escolhida} \n-Total: R$ ${totalMsg} `;
   const msg_wpp = encodeURI(mensagem);
 
   window.location.href = `https://wa.me/5516994476161?text=${msg_wpp}`;
